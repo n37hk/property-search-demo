@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/property-search-demo/static/css/main.d04344ec.chunk.css",
+    "main.js": "/property-search-demo/static/js/main.a16a87bc.chunk.js",
+    "main.js.map": "/property-search-demo/static/js/main.a16a87bc.chunk.js.map",
+    "runtime-main.js": "/property-search-demo/static/js/runtime-main.09814890.js",
+    "runtime-main.js.map": "/property-search-demo/static/js/runtime-main.09814890.js.map",
+    "static/js/2.c8726bb6.chunk.js": "/property-search-demo/static/js/2.c8726bb6.chunk.js",
+    "static/js/2.c8726bb6.chunk.js.map": "/property-search-demo/static/js/2.c8726bb6.chunk.js.map",
+    "index.html": "/property-search-demo/index.html",
+    "static/css/main.d04344ec.chunk.css.map": "/property-search-demo/static/css/main.d04344ec.chunk.css.map",
+    "static/js/2.c8726bb6.chunk.js.LICENSE.txt": "/property-search-demo/static/js/2.c8726bb6.chunk.js.LICENSE.txt",
+    "static/media/Home.css": "/property-search-demo/static/media/home-cover.ef90395d.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09814890.js",
+    "static/js/2.c8726bb6.chunk.js",
+    "static/css/main.d04344ec.chunk.css",
+    "static/js/main.a16a87bc.chunk.js"
+  ]
+}

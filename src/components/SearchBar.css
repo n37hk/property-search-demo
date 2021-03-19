@@ -1,0 +1,18 @@
+.searchbar-container{
+    width: 92%;
+    border: 0.5px solid #8d8d8d;
+    box-shadow: 1px 4px 8px #8d8d8d ;
+    margin: auto;
+    margin-top: 25px;
+    font-size: 14pt;
+    padding: 15px;
+}
+
+.search-query-container{
+    padding: 0;
+}
+
+.dropdown{
+    font-size: 14pt;
+    margin-right: 5px;
+}

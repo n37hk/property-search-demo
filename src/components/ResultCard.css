@@ -1,0 +1,29 @@
+.result-card{
+    display: flex;
+    width: 100%;
+    font-size: 14pt;
+    padding: 15px;
+    margin-top: 15px;
+    border: 1px solid #8d8d8d;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #8d8d8d;
+}
+
+.result-card > ul{
+    list-style-type: none;
+}
+
+.card-controls{
+    margin-right: 0;
+    margin-left: auto;
+}
+
+@media screen and (max-width: 540px){
+    .result-card{
+        display: block;
+    }
+
+    .card-controls{
+        margin-top: 10px;
+    }
+}

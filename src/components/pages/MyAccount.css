@@ -1,0 +1,25 @@
+.account-details-container, .update-details-container{
+    width: 80%;
+    border: 0.5px solid #242424;
+    border-radius: 3px;
+    padding: 15px;
+    font-size: 16pt;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.account-details-container > ul{
+    list-style-type: none;
+}
+
+.update-fields{
+    max-width: 320px;
+    margin-right: 10px;
+}
+
+@media screen and (min-width: 660px){
+    .update-fields{
+        margin-left: 10px;
+    }
+}

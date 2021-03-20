@@ -2,24 +2,29 @@ import React from 'react';
 import { Button } from './Button';
 import './ResultCard.css';
 
-function ResultCard(props){
-    const LANGUAGES = {
-        "en": ["Area", "Cost", "Amenities", 'Number Of Bedrooms'],
-        "al": ["Zona", "Kostoja", "Lehtësitë", "Numri i dhomave të gjumit"],
-    }
+const LANGUAGES = {
+    "en": ["Area", "Cost", "Facilities", 'Number Of Bedrooms'],
+    "al": ["Zona", "Kostoja", "Lehtesirat", "Numri i dhomave të gjumit"],
+}
+
+export const ResultCard = ({
+    language,
+    cost,
+    area,
+    bedrooms,
+    facilities
+})=>{
     return (
         <div className="result-card">
             <ul>
-                <li>{LANGUAGES[props.language][1]}: {props.cost}</li>
-                <li>{LANGUAGES[props.language][0]}: {props.area}</li>
-                <li>{LANGUAGES[props.language][3]}: {props.bedrooms}</li>
-                <li>{LANGUAGES[props.language][2]}: {props.location}</li>
+                <li>{LANGUAGES[language][1]}: {cost} INR</li>
+                <li>{LANGUAGES[language][0]}: {area} sq.ft</li>
+                <li>{LANGUAGES[language][3]}: {bedrooms}</li>
+                <li>{LANGUAGES[language][2]}: {facilities}</li>
             </ul>
             <div className="card-controls">
                 <Button buttonStyle="btn--form">View</Button>
             </div>
         </div>
     );
-}
-
-export default ResultCard;
+};

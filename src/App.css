@@ -12,3 +12,30 @@
 a{
     text-decoration: none;
 }
+
+
+
+.dropdown {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 5px;
+    border: 0.5px solid black;
+    font-size: 14pt;
+    padding-right: 1.5rem;
+    margin-top: 25px;
+}
+
+.dropdown-dark{
+    border: none;
+    color: white;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+}
+
+.dropdown-light{
+    border: none;
+    color: black;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+}

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Redirect } from 'react-router';
 import { Button } from './Button';
 import './form.css';
 import { TextInput } from './TextInput';

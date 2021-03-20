@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import React from 'react';
 import { Button } from '../Button';
 import { Navbar } from '../Navbar';
 import { TextInput } from '../TextInput';

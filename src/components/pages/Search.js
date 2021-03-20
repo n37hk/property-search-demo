@@ -3,35 +3,46 @@ import './Search.css';
 import '../../App.css';
 import { Navbar } from '../Navbar';
 import SearchBar from '../SearchBar';
-import ResultCard from '../ResultCard';
+import { ResultCard } from '../ResultCard';
 import ReactDOM from 'react-dom';
+import Axios from 'axios';
 
 function Search(props){
-    const mysql = require('mysql');
-
-    const con = mysql.createConnection({
-        host: "demodb.cvoyib7kpkc5.ap-south-1.rds.amazonaws.com",
-        user: "admin",
-        password: "demodb123"
-    });
+    const dbServerAddress = "http://ec2-52-66-15-195.ap-south-1.compute.amazonaws.com/get-property-list.php";
 
     const getResults =() => {
         let location = document.getElementById("location").value;
-        con.connect(function(err) {
-            con.query('SELECT * FROM demo.real_estate_mumbai WHERE Location="'+location+'"', function(err, result, fields) {
-                if (err){
-                    alert("Unable to get results");
+        let type = document.getElementById("propertyType").value;
+        Axios.post(dbServerAddress,
+        {
+            location: location,
+            type: type
+        })
+        .then(({data}) => {
+            if(data.success === 1){
+                document.getElementById("resultSummary").innerHTML = "Total "+data.resultCount+" result(s) found";
+                let results = data.propertyList;
+                class First extends React.Component {                  
+                    render() {
+                        var listItems = results.map((property, index) => {
+                            return (<ResultCard key={"property-"+index} language={props.language} area={property.Area} cost={property.Cost} bedrooms={property.Bedrooms} facilities={Object.keys(property).slice(4,16)}/>);
+                        })
+                        // console.log(listItems);
+                        return (
+                            <div>
+                            {listItems}
+                            </div>
+                        );
+                    }
                 }
-                if(result){
-                    result.forEach(res => {
-                        ReactDOM.render(
-                            <ResultCard language={props.language} area={res.Area} cost={res.Cost} bedrooms={res.Bedrooms}/>,
-                            document.getElementById("results")
-                        )
-                    });
-                }
-            });
-            con.end();
+                ReactDOM.render(<First />, document.getElementById("results"));
+            }
+            else{
+                alert(data.msg);
+            }
+        })
+        .catch(error => {
+            console.log(error);
         });
     }
     return (

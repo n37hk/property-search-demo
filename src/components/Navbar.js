@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import '../App.css';
 
 function Navbar(props) {
     let currentLang = props.language;
@@ -14,14 +15,20 @@ function Navbar(props) {
         setClick(!click);
     }
 
-    const closeMobileMenu = () => {
+    const changeLanguage = () => {
+        let language = document.getElementById("languageSelector").value;
         setClick(false);
+        window.location.assign("/"+language+"/"+window.location.href.split("/").slice(4).join())
     }
 
     const logout = () => {
         localStorage.removeItem("demoAppCurrentUser");
         alert("You have been logged out of your account.");
         window.location.assign("/"+currentLang+"/login");
+    }
+
+    const closeMobileMenu = () => {
+        setClick(false);
     }
 
     return (
@@ -44,14 +51,10 @@ function Navbar(props) {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to={"/en/"+window.location.href.split("/").slice(4).join()} className="nav-links" onClick={closeMobileMenu}>
-                                En
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to={"/al/"+window.location.href.split("/").slice(4).join()} className="nav-links" onClick={closeMobileMenu}>
-                                Al
-                            </Link>
+                            <select className="dropdown dropdown-dark" id="languageSelector" onChange={changeLanguage} defaultValue={window.location.href.split('/')[3]}>
+                                <option value="en">English</option>
+                                <option value="al">Albanian</option>
+                            </select>
                         </li>
                         <li className="nav-item">
                             <Link to="/" className="nav-links" onClick={logout}>
@@ -78,9 +81,14 @@ function HomeNavbar(props) {
         setClick(!click);
     }
 
-    const closeMobileMenu = (language) => {
+    const closeMobileMenu = () => {
         setClick(false);
-        currentLang = language;
+    }
+
+    const changeLanguage = () => {
+        let language = document.getElementById("languageSelector").value;
+        setClick(false);
+        window.location.assign("/"+language+"/"+window.location.href.split("/").slice(4).join())
     }
 
     return (
@@ -95,15 +103,11 @@ function HomeNavbar(props) {
                         <i className={click ? "fas fa-times":"fas fa-bars"}/>
                     </div>
                     <ul className={click ? "nav-menu active":"nav-menu"}>
-                    <li className="nav-item">
-                            <Link to={"/en/"+window.location.href.split("/").slice(4).join()} className="nav-links" onClick={closeMobileMenu}>
-                                En
-                            </Link>
-                        </li>
                         <li className="nav-item">
-                            <Link to={"/al/"+window.location.href.split("/").slice(4).join()} className="nav-links" onClick={closeMobileMenu}>
-                                Al
-                            </Link>
+                            <select className="dropdown dropdown-dark" id="languageSelector" onChange={changeLanguage} defaultValue={window.location.href.split('/')[3]}>
+                                <option value="en">English</option>
+                                <option value="al">Albanian</option>
+                            </select>
                         </li>
                         <li className="nav-item">
                             <Link to={"/"+currentLang+"/login"} className="nav-links" onClick={closeMobileMenu}>

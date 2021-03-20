@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
-import Navbar from './components/Navbar';
 import {HomeLogin, HomeSignup} from './components/pages/Home';
 import MyAccount from './components/pages/MyAccount';
 import Search from './components/pages/Search';

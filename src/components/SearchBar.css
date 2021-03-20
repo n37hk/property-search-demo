@@ -1,18 +1,37 @@
 .searchbar-container{
-    width: 92%;
+    width: 100%;
     border: 0.5px solid #8d8d8d;
     box-shadow: 1px 4px 8px #8d8d8d ;
     margin: auto;
-    margin-top: 25px;
+    /* margin-top: 25px; */
     font-size: 14pt;
-    padding: 15px;
+    padding: 10px;
+}
+
+.search-logo{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .search-query-container{
     padding: 0;
+    display: flex;
 }
 
 .dropdown{
     font-size: 14pt;
     margin-right: 5px;
+}
+
+.result-summary{
+    display: block;
+    padding-top: 10px;
+    width: 100%;
+    font-size: 14pt;
+    color: #8d8d8d;
+    text-align: center;
 }
